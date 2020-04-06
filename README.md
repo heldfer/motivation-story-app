@@ -16,7 +16,7 @@
 
 ## Install external dependencies
 
-### `$ npm i -g firebase-tools`
+`$ npm i -g firebase-tools`
 
 Install firebase CLI [docs here](https://firebase.google.com/docs/cli)
 
@@ -24,7 +24,8 @@ Install firebase CLI [docs here](https://firebase.google.com/docs/cli)
 ## Terminal commands
 
 
-__Inside our project root directory we can run the following commands:__
+Inside our project root directory we can run the following commands:
+___
 
 `$ npm start`
 
@@ -40,7 +41,9 @@ Sign into Firebase using your Google account. This command connects to your Fire
 
 We need to create a new directory first, before we install any new firebase product.
 
-__Inside our firebase-functions directory we can run the following commands:__
+Inside our firebase-functions directory we can run the following commands:
+___
+
 `$ firebase deploy`
 
 Use this command to deploy a firebase project
