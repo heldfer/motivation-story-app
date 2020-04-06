@@ -15,33 +15,33 @@
 * [x] Create a new react project 
 
 ## Install external dependencies
-___
+
 ### `$ npm i -g firebase-tools`
 
 Install firebase CLI [docs here](https://firebase.google.com/docs/cli)
 
 
 ## Terminal commands
-___
+
 
 __Inside our project root directory we can run the following commands:__
 
-### `$ npm start`
+`$ npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `$ firebase login`
+`$ firebase login`
 
 Sign into Firebase using your Google account. This command connects to your Firebase projects.<br />
 (You need to install Firebase CLI first)
 
-### `$ firebase init`
+`$ firebase init`
 
 We need to create a new directory first, before we install any new firebase product.
 
 __Inside our firebase-functions directory we can run the following commands:__
-### `$ firebase deploy`
+`$ firebase deploy`
 
 Use this command to deploy a firebase project
 
