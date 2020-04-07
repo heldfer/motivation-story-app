@@ -5,7 +5,8 @@
 * [Node.js](https://nodejs.org/) with [Express JS](https://expressjs.com/) (REST API server)
 * [Material-UI](https://material-ui.com/)
 * [Firebase](https://firebase.google.com/)
-  * [Cloud Firestore](https://firebase.google.com/products/firestore)
+  * [Cloud Firestore](https://firebase.google.com/products/firestore) (NoSQL Database)
+    * [Documentation](https://firebase.google.com/docs/firestore)
   * [Cloud Functions](https://firebase.google.com/products/functions)
   * [Authentication](https://firebase.google.com/products/auth)
 
