@@ -13,7 +13,8 @@
 ## TODO
 * [x] Create firebase account and a new project via UI
   * [x] Add the firebase cloud functions product to our project
-* [x] Create a new react project 
+* [x] Create a new react project
+* [x] Create a REST API server using express
 
 ## Install external dependencies
 
@@ -47,7 +48,11 @@ ___
 
 `$ firebase deploy`
 
-Use this command to deploy a firebase project
+Use this command to deploy our firebase project to the server
+
+`$ firebase serve`
+
+Use this command to run our firebase project locally
 
 
 
