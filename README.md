@@ -15,6 +15,7 @@
   * [x] Add the firebase cloud functions product to our project
 * [x] Create a new react project
 * [x] Create a REST API server using express
+* [ ] User registration 
 
 ## Install external dependencies
 

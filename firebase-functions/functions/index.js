@@ -12,10 +12,13 @@ admin.initializeApp({
 const app = express()
 
 app.get('/stories', asyncHandler(async (req, res) => {
-  const response = await admin.firestore().collection('stories').get()
+  const response = await admin.firestore().collection('stories').orderBy('createdAt', 'desc').get()
   let stories = []
   response.forEach(doc => {
-    stories.push(doc.data())
+    stories.push({
+      id: doc.id,
+      ...doc.data()
+    })
   })
 
   return res.json({ data: stories })
@@ -26,7 +29,7 @@ app.post('/story', asyncHandler(async (req, res) => {
     user: req.body.user,
     description: req.body.description,
     title: req.body.title,
-    createdAt: admin.firestore.Timestamp.fromDate(new Date())
+    createdAt: new Date().toISOString()
   }
   const response = await admin.firestore().collection('stories').add(newStory)
 
