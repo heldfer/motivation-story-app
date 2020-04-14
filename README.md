@@ -15,7 +15,9 @@
   * [x] Add the firebase cloud functions product to our project
 * [x] Create a new react project
 * [x] Create a REST API server using express
-* [ ] User registration 
+* [x] User registration
+  * [] Validate signup fields
+  * [] Create a users collection in cloud firestore database to store more user data
 
 ## Install external dependencies
 
