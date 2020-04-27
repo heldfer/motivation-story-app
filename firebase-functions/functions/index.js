@@ -12,8 +12,10 @@ admin.initializeApp({
 
 firebase.initializeApp(configs.firebase)
 
+const db = admin.firestore()
+
 app.get('/stories', asyncHandler(async (req, res) => {
-  const response = await admin.firestore().collection('stories').orderBy('createdAt', 'desc').get()
+  const response = await db.collection('stories').orderBy('createdAt', 'desc').get()
   let stories = []
   response.forEach(doc => {
     stories.push({
@@ -32,7 +34,7 @@ app.post('/story', asyncHandler(async (req, res) => {
     title: req.body.title,
     createdAt: new Date().toISOString()
   }
-  const response = await admin.firestore().collection('stories').add(newStory)
+  const response = await db.collection('stories').add(newStory)
 
   return res.json({ message: `Story with id ${response.id} created successfully!` })
 }))
@@ -46,9 +48,16 @@ app.post('/signup', asyncHandler(async (req, res) => {
     avatar: req.body.avatar
   }
 
-  const response = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
+  // Check if this new user already exists
+  const userSnapshot = await db.collection('users').doc(newUser.email).get()
 
-  return res.status(201).json({ message: 'User created successfully!', data: response.user })
+  if (userSnapshot.exists) {
+    return res.status(400).json({ message: 'That user already exists', data: null })
+  }
+  
+  const response = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
+  const token = await response.user.getIdToken() 
+  return res.status(201).json({ message: 'User created successfully!', data: { token } })
 }))
 
 exports.api = functions.https.onRequest(app);
