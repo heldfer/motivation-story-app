@@ -17,7 +17,7 @@
 * [x] Create a REST API server using express
 * [x] User registration
   * [] Validate signup fields
-  * [] Create a users collection in cloud firestore database to store more user data
+  * [x] Create a users collection in cloud firestore database to store more user data
 
 ## Install external dependencies
 

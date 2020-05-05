@@ -44,20 +44,32 @@ app.post('/signup', asyncHandler(async (req, res) => {
   const newUser = {
     email: req.body.email,
     password: req.body.password,
-    username: req.body.username,
-    avatar: req.body.avatar
+    username: req.body.username || null,
+    avatar: req.body.avatar || null,
+    createdAt: new Date().toISOString(),
+    userId: null
   }
 
   // Check if this new user already exists
-  const userSnapshot = await db.collection('users').doc(newUser.email).get()
+  const user = await db.collection('users').doc(newUser.email).get()
 
-  if (userSnapshot.exists) {
+  if (user.exists) {
     return res.status(400).json({ message: 'That user already exists', data: null })
   }
   
   const response = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
-  const token = await response.user.getIdToken() 
+  const token = await response.user.getIdToken()
+
+  newUser.userId = response.user.uid
+
+  await db.collection('users').doc(newUser.email).set(newUser)
+
   return res.status(201).json({ message: 'User created successfully!', data: { token } })
 }))
+
+app.use((error, req, res, next) => {
+  console.log(error)
+  res.status(500).json({ message: 'Server error', error: error.stack })
+})
 
 exports.api = functions.https.onRequest(app);
