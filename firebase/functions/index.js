@@ -14,6 +14,10 @@ firebase.initializeApp(configs.firebase)
 
 const db = admin.firestore()
 
+const auth = (req, res, next) => {
+
+}
+
 app.get('/stories', asyncHandler(async (req, res) => {
   const response = await db.collection('stories').orderBy('createdAt', 'desc').get()
   let stories = []
@@ -74,12 +78,8 @@ app.post('/login', asyncHandler(async (req, res) => {
   
     return res.json({ message: 'User successfully signed in!', data: { token } })
   } catch (error) {
-    if (error.code === 'auth/user-not-found') {
-      return res.status(404).json({ message: 'User not found', error: error.code })
-    }
-
-    if (error.code === 'auth/wrong-password') {
-      return res.status(403).json({ message: 'Bad credentials', error: error.code })
+    if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+      return res.status(401).json({ message: 'Bad credentials', error: error.code })
     }
 
     return error
