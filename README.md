@@ -1,4 +1,7 @@
 
+## Project status
+Working on it...
+
 ## Technology stack
 * [React library](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
