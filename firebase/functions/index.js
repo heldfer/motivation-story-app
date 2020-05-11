@@ -14,11 +14,27 @@ firebase.initializeApp(configs.firebase)
 
 const db = admin.firestore()
 
-const auth = (req, res, next) => {
+const auth = asyncHandler(async (req, res, next) => {
+  const auth = req.headers.authorization
 
-}
+  if (!auth) {
+    return res.status(401).json({message: 'Unauthorized access!'})
+  }
 
-app.get('/stories', asyncHandler(async (req, res) => {
+  try {
+    await admin.auth().verifyIdToken(auth)
+  } catch (error) {
+    if (error.code === 'auth/argument-error') {
+      return res.status(401).json({message: 'Unauthorized access!'})
+    }
+
+    return error
+  }
+
+  next()
+})
+
+app.get('/stories', auth, asyncHandler(async (req, res) => {
   const response = await db.collection('stories').orderBy('createdAt', 'desc').get()
   let stories = []
   response.forEach(doc => {
@@ -79,7 +95,7 @@ app.post('/login', asyncHandler(async (req, res) => {
     return res.json({ message: 'User successfully signed in!', data: { token } })
   } catch (error) {
     if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
-      return res.status(401).json({ message: 'Bad credentials', error: error.code })
+      return res.status(400).json({ message: 'Bad credentials', error: error.code })
     }
 
     return error
