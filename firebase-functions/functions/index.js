@@ -67,9 +67,16 @@ app.post('/signup', asyncHandler(async (req, res) => {
   return res.status(201).json({ message: 'User created successfully!', data: { token } })
 }))
 
+app.post('/login', asyncHandler(async (req, res) => {
+  const response = await firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
+  const token = await response.user.getIdToken()
+
+  return res.json({ message: 'User successfully signed in!', data: { token } })
+}))
+
 app.use((error, req, res, next) => {
   console.log(error)
-  res.status(500).json({ message: 'Server error', error: error.stack })
+  res.status(500).json({ message: 'Server error', error: error.code })
 })
 
 exports.api = functions.https.onRequest(app);
