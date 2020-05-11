@@ -54,7 +54,7 @@ app.post('/signup', asyncHandler(async (req, res) => {
   const user = await db.collection('users').doc(newUser.email).get()
 
   if (user.exists) {
-    return res.status(400).json({ message: 'That user already exists', data: null })
+    return res.status(400).json({ message: 'That user already exists' })
   }
   
   const response = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
@@ -68,10 +68,22 @@ app.post('/signup', asyncHandler(async (req, res) => {
 }))
 
 app.post('/login', asyncHandler(async (req, res) => {
-  const response = await firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
-  const token = await response.user.getIdToken()
+  try {
+    const response = await firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
+    const token = await response.user.getIdToken()
+  
+    return res.json({ message: 'User successfully signed in!', data: { token } })
+  } catch (error) {
+    if (error.code === 'auth/user-not-found') {
+      return res.status(404).json({ message: 'User not found', error: error.code })
+    }
 
-  return res.json({ message: 'User successfully signed in!', data: { token } })
+    if (error.code === 'auth/wrong-password') {
+      return res.status(403).json({ message: 'Bad credentials', error: error.code })
+    }
+
+    return error
+  }
 }))
 
 app.use((error, req, res, next) => {
