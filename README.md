@@ -13,49 +13,52 @@
 ## TODO
 * [x] Create firebase account and a new project via UI
   * [x] Add the firebase cloud functions product to our project
-* [x] Create a new react project
-* [x] Create a REST API server using express
-* [x] User registration
-  * [] Validate signup fields
+* [x] Client - Create a new react project
+* [x] Server - Create a REST API server using express
   * [x] Create a users collection in cloud firestore database to store more user data
+  * [] Server Routing
+    * [x] Signup - User registration 
+      * [] Validate signup fields
+    * [] Login - User can sign in
 
 ## Install external dependencies
-
-`$ npm i -g firebase-tools`
-
 Install firebase CLI [docs here](https://firebase.google.com/docs/cli)
 
+```
+$ npm i -g firebase-tools
+```
 
-## Terminal commands
-
-
-Inside our project root directory we can run the following commands:
-___
-
-`$ npm start`
-
-Runs the app in the development mode.<br />
+## Compiles and hot-reloads for development
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-`$ firebase login`
-
-Sign into Firebase using your Google account. This command connects to your Firebase projects.<br />
-(You need to install Firebase CLI first)
-
-`$ firebase init`
-
-We need to create a new directory first, before we install any new firebase product.
-
-Inside our firebase-functions directory we can run the following commands:
+```
+$ npm start
+```
 ___
+## Firebase CLI commands, create a new directory inside your project (this project: firebase-functions)
+Make use you have Firebase CLI installed, after that run the below commands inside the new directory created
 
-`$ firebase deploy`
+### Sign into Firebase using your Google account
+This command connects to your Firebase projects. 
 
-Use this command to deploy our firebase project to the server
+```
+$ firebase login
+```
 
-`$ firebase serve`
+### Install new firebase products
+```
+$ firebase init
+```
 
-Use this command to run our firebase project locally
+### Deploy our firebase project to the server
+```
+$ firebase deploy
+```
+
+### Run our firebase project locally
+```
+$ firebase serve
+```
 
 
 
