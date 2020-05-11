@@ -1,0 +1,24 @@
+{
+  "serviceAccountKey": {
+    "type": "service_account",
+    "project_id": "motivation-story-app",
+    "private_key_id": "ef9f1a4becebc1dd201ae8ac98ed0e0867500551",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwHdoblHdZQxum\nfPZYbIkUZ8+oojqu896f0c9F07Gnd9q2eqtknO9OqF2Kv3ASB2RhWGHZw3wwVAcy\n73EAttL8PT3vhOpKrVXESHBhhU/nfWhmirqza+5lQmTBbkD5R8r3DSnSYFxdAVMW\nxFHJ2iJPo1uYNF2QGzoJFgKV5YfwiZFs4/gvm2Mh3igZW5jXskKhMNTrQNjtp9cV\na8eynqGpS8I488WiKonJkMcYPhvu3Nm3UkHH7ErBhF1u3MdWhyAC/ElwkzYUb631\nmkG3LDCWruBiFh1P9xC5UyOY4wxNy+F+9PRzMiI3ERnuo9rdmxRBQP97qfNGZcD9\n8CVMGMOhAgMBAAECggEAKJ6h/QV3p3dSa8pbmRZjYXj2DLtqFIr7uFnQWBcU3P7I\nS5ksabbGfRpZBNTVmNrqnIchfnPXc2AWDvnp0tPYAsRvQgyiaxnic7SPcvan8Mjc\naPYrTJGiuOkgyvpOcxBLcEKxeCuwceUJ0HD0Oj2c90hCqm69e6zD7G+Ophr8CQ6X\nenwVU7dhEgXMf5IUxROC6edQG+BQDfOcZiP6nbiANH8CT/lB/esCu6VKd9tfhDUU\n8cmwzBLiAqnUst1+uhEgt7Y7BicX2q9dbKLOCkptl4GAVks9oQiaK1JhKWytFvzF\n6AFR90TXDRg0c0r/qFSxPQoKWJ3fLL/DeXfpotKnJwKBgQDizpdfmRDr8jAFNs8v\nOV6gfORh1gtTFtgv20EDNv8VZ6p/sW0c1WlFHE5+TIrY8+NoeSw3bODvswe69SCf\na8v2NnPNowFZnbqVMvhd+2aDhH/H2E4B96qUsIGu7Hdq8F6dkJv5gzqxajVd2Ck2\n2nOvSxsjcBCMT6YgwDf+i4l3EwKBgQDGyPxqHkxl1jMgvHufe0fjY+HI53UEnGmB\nNaOAclLAbbYclYF15RnMzJ/dHMsx2RVRHezR4rwPB2kCBKJpSAblvB9utpgAHkeN\nGG113coH2bmyRad9J9cYiy8n55+1hljeEC6w3Xm3pUyjt3Euv6Guc9Xp9K5HmIqp\nmC2Ekzds+wKBgC1ZgYrr4CZNVqy0ONkIb5NHZaLqWXlTqAZpoKYz6O0uvTirEVYi\nldnrvwYh5+FZYq8RC3ZJnvBOq80GFm/J7g5c9Oq5HRv+HcCXYHHqQqUpaSNcbLyX\n+NOiN0vynC4VwdVfhNBvHN08j08kWZlONLNoIRUE40oq4tzJkmijHelhAoGAWX2i\nJSP+wNntqo8wGFwnwPb2brvEso638LN1KB5PotHBapzj6294bfqw/Zo43/ga4KnY\nM6UfhKSRYZc0hrEmacaHYBBT3bnD/IFCxg1TJrWeI+O3w2BsNWBzmkNsYwxYdaBT\nZMxQP5zrI8kx6xnab+82Hl1JGHJT+oXH+CdOjIECgYAjIfU78sE3evYC+WJIRkiE\nHjUJAx1lJ2G93q70JhoQJZswamPbN+hcpDaquQ7kn5ATh9LSa3HoPUVQ6KjHuiWe\nNscbs5bUABPu5+WgajqtuODGTbNbImCJC4iLjSynZ+lby2QmomLRymoRQXTQVEgc\nbkVUW2OMoLKInXv4uthaFg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-1cakg@motivation-story-app.iam.gserviceaccount.com",
+    "client_id": "114538758846374563428",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1cakg%40motivation-story-app.iam.gserviceaccount.com"
+  },
+  "firebase": {
+    "apiKey": "AIzaSyAnS0ritl2r_CwT1AVfDvK_ey9Ptk5ECRs",
+    "authDomain": "motivation-story-app.firebaseapp.com",
+    "databaseURL": "https://motivation-story-app.firebaseio.com",
+    "projectId": "motivation-story-app",
+    "storageBucket": "motivation-story-app.appspot.com",
+    "messagingSenderId": "895538459414",
+    "appId": "1:895538459414:web:2299cea4dc6949eb6ad637",
+    "measurementId": "G-E44BMX7N32"
+  }
+}

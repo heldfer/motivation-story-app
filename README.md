@@ -30,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 $ npm start
 ```
 ___
-## Firebase CLI commands, create a new directory inside your project (this project: firebase-functions)
+## Firebase CLI commands, create a new directory inside your project (this project: firebase)
 Make use you have Firebase CLI installed, after that run the below commands inside the new directory created
 
 ### Sign into Firebase using your Google account
